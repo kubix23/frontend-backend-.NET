@@ -20,22 +20,20 @@ namespace backend.Controllers
         public ContactsController(DBContact context)
         {
             _context = context;
-            var init = new InitialData(this);
-            init.addContacts();
         }
 
         // GET: api/Contacts
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Contact>>> GetTodos()
         {
-            return await _context.Todos.ToListAsync();
+            return await _context.contacts.ToListAsync();
         }
 
         // GET: api/Contacts/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Contact>> GetContact(int id)
         {
-            var contact = await _context.Todos.FindAsync(id);
+            var contact = await _context.contacts.FindAsync(id);
 
             if (contact == null)
             {
@@ -65,10 +63,10 @@ namespace backend.Controllers
             {
                 if (!ContactExists(id))
                 {
-                    _context.Todos.Add(contact);
+                    _context.contacts.Add(contact);
                     await _context.SaveChangesAsync();
 
-                    return CreatedAtAction(nameof(PostContact), new { id = contact.Id }, contact);
+                    return CreatedAtAction(nameof(PutContact), new { id = contact.Id }, contact);
                 }
                 else
                 {
@@ -83,13 +81,13 @@ namespace backend.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteContact(int id)
         {
-            var contact = await _context.Todos.FindAsync(id);
+            var contact = await _context.contacts.FindAsync(id);
             if (contact == null)
             {
                 return NotFound();
             }
 
-            _context.Todos.Remove(contact);
+            _context.contacts.Remove(contact);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -97,7 +95,7 @@ namespace backend.Controllers
 
         private bool ContactExists(int id)
         {
-            return _context.Todos.Any(e => e.Id == id);
+            return _context.contacts.Any(e => e.Id == id);
         }
     }
 }

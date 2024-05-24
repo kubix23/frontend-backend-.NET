@@ -1,19 +1,20 @@
-<h1 id="tableLabel">Contacts</h1>
-<table *ngIf="contacts">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Surname</th>
-            <th>Email</th>
-            <th>Password</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let contact of contacts">
-            <td>{{ contact.name }}</td>
-            <td>{{ contact.surname }}</td>
-            <td>{{ contact.email }}</td>
-            <td>{{ contact.password }}</td>
-        </tr>
-    </tbody>
-</table>
+<article class="container text--justified">
+    <header>
+        <h1>Contacts</h1>
+    </header>
+    <div>
+        <button [routerLink]="['/contact','new']" class="btn btn-dark">Add</button>
+        <ul *ngIf="contacts">
+            <li *ngFor="let contact of contacts">
+                <span class="row">
+                    <p>{{contact.name}} {{contact.surname}}</p>
+                    <span class="control">
+                        <a [routerLink]="['/contact',contact.id,'details']"><button>Details</button></a>
+                        <a [routerLink]="['/contact',contact.id,'edit']"><button>Edit</button></a>
+                        <button (click)="onDelete(contact)">Delete</button>
+                    </span>
+                </span>
+            </li>
+        </ul>
+    </div>
+</article>

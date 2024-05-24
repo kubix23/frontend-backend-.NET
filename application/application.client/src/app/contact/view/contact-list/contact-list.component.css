@@ -1,22 +1,52 @@
-:host {
-  max-width: 1280px;
-  padding: 2rem;
-  text-align: center;
+.row {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 40vw;
+  min-width: 300px;
+  margin: 5px;
+  padding: 3px;
+  border-bottom: 3px solid black;
+  position: relative;
 }
 
-tr:nth-child(even) {
-  background: #F2F2F2;
+.row a {
+  font-family: Calibri;
 }
 
-tr:nth-child(odd) {
-  background: #FFF;
+.row span {
+  width: fit-content;
+  position: absolute;
+  right: 0;
 }
 
-th, td {
-  padding-left: 1rem;
-  padding-right: 1rem;
+.row span button {
+  display: inline-flex;
+  border-radius: 10px;
+  color: white;
+  background: #3c5f5f;
+  cursor: pointer;
+  margin-left: 3px;
+  box-shadow: inset -0px 0px 0px rgba(80, 0, 0, 0.7);
 }
 
-table {
-  margin: 0 auto;
+  .row span button:hover {
+    background: #5c7e7e;
+  }
+
+.row span > button:last-of-type::after {
+  content: "";
+  width: 0px;
+}
+
+.row span > button:last-of-type:hover::after {
+  content: "";
+  align-self: stretch;
+  width: 20px;
+  transition: width 100ms ease-in;
+}
+
+.row span > button:last-of-type:hover {
+  box-shadow: inset -10px 0px 19px rgba(255, 0, 0, 1);
+  transition: box-shadow 150ms linear;
 }

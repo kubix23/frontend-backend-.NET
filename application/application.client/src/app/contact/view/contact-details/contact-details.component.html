@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<article class="container text--justified">
+    <header style="display: flex; gap:10px">
+        <h1>Contact</h1>
+        <button onclick="history.back()" id="close" class="btn border border-3 bg-dark bg-opacity-25 fa fa-window-close fa-2x"></button>
+    </header>
+    <div *ngIf="contact" class="container">
+        <ul class="list-group">
+            <li class="list-group-item"><b>Name:</b> {{contact.name}}</li>
+            <li class="list-group-item"><b>Surname:</b> {{contact.surname}}</li>
+            <li class="list-group-item"><b>Password:</b> {{contact.password}}</li>
+            <li class="list-group-item"><b>Email:</b> {{contact.email}}</li>
+            <li class="list-group-item"><b>Phone:</b> {{contact.phone}}</li>
+            <li class="list-group-item"><b>Category:</b> {{contact.category}}</li>
+            <li class="list-group-item"><b>Subcategory:</b> {{contact.subcategory}}</li>
+        </ul>
+    </div>
+</article>
