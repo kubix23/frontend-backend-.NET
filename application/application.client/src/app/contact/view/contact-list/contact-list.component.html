@@ -1,0 +1,19 @@
+<h1 id="tableLabel">Contacts</h1>
+<table *ngIf="contacts">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Email</th>
+            <th>Password</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let contact of contacts">
+            <td>{{ contact.name }}</td>
+            <td>{{ contact.surname }}</td>
+            <td>{{ contact.email }}</td>
+            <td>{{ contact.password }}</td>
+        </tr>
+    </tbody>
+</table>
