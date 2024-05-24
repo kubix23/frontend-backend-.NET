@@ -9,27 +9,30 @@ namespace backend.Data.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int id { get; set; }
 
         [Required]
-        public required string Name { get; set; }
+        public required string name { get; set; }
 
         [Required]
-        public required string Surname { get; set; }
+        public required string surname { get; set; }
 
         [EmailAddress]
-        public string? Email { get; set; }
+        public string? email { get; set; }
 
         [Required]
-        public required string Password { get; set; }
+        public required string password { get; set; }
 
         [Required]
         [AllowedValues("Służbowy", "Prywatny", "inny")]
-        public required string Category { get; set; }
+        public required string category { get; set; }
 
-        public string? Subcategory { get; set; }
+        public string? subcategory { get; set; }
 
         [Phone]
-        public string? Phone { get; set; }
+        public string? phone { get; set; }
+
+        [Required]
+        public DateOnly dateOfBirth { get; set; }
     }
 }

@@ -48,9 +48,9 @@ namespace backend.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutContact(int id, Contact contact)
         {
-            if (id != contact.Id)
+            if (id != contact.id)
             {
-                return BadRequest();
+                return BadRequest($"{id} {contact.id}");
             }
 
             _context.Entry(contact).State = EntityState.Modified;
@@ -66,7 +66,7 @@ namespace backend.Controllers
                     _context.contacts.Add(contact);
                     await _context.SaveChangesAsync();
 
-                    return CreatedAtAction(nameof(PutContact), new { id = contact.Id }, contact);
+                    return CreatedAtAction(nameof(PutContact), new { id = contact.id }, contact);
                 }
                 else
                 {
@@ -95,7 +95,7 @@ namespace backend.Controllers
 
         private bool ContactExists(int id)
         {
-            return _context.contacts.Any(e => e.Id == id);
+            return _context.contacts.Any(e => e.id == id);
         }
     }
 }

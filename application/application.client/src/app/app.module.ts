@@ -8,16 +8,19 @@ import { ContactListComponent } from './contact/view/contact-list/contact-list.c
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { ContactDetailsComponent } from './contact/view/contact-details/contact-details.component';
+import { ContactFormComponent } from './contact/view/contact-form/contact-form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactListComponent,
-    ContactDetailsComponent
+    ContactDetailsComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,
-    AppRoutingModule, CommonModule, RouterOutlet
+    AppRoutingModule, CommonModule, RouterOutlet, FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

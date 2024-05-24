@@ -19,13 +19,14 @@ namespace application.Server.Init
                 return;
             }
             var faker = new Faker<Contact>()
-            .RuleFor(c => c.Name, f => f.Name.FirstName())
-            .RuleFor(c => c.Surname, f => f.Name.LastName())
-            .RuleFor(c => c.Email, f => f.Internet.Email())
-            .RuleFor(c => c.Password, f => f.Internet.Password())
-            .RuleFor(c => c.Category, f => f.PickRandom(new[] { "Służbowy", "Prywatny", "inny" }))
-            .RuleFor(c => c.Subcategory, f => f.Lorem.Word())
-            .RuleFor(c => c.Phone, f => f.Phone.PhoneNumber());
+            .RuleFor(c => c.name, f => f.Name.FirstName())
+            .RuleFor(c => c.surname, f => f.Name.LastName())
+            .RuleFor(c => c.email, f => f.Internet.Email())
+            .RuleFor(c => c.password, f => f.Internet.Password())
+            .RuleFor(c => c.category, f => f.PickRandom(new[] { "Służbowy", "Prywatny", "inny" }))
+            .RuleFor(c => c.subcategory, f => f.Lorem.Word())
+            .RuleFor(c => c.phone, f => f.Phone.PhoneNumber())
+            .RuleFor(c => c.dateOfBirth, f => f.Date.PastDateOnly(refDate: new DateOnly(2000,01,01)));
 
             context.contacts.AddRange(faker.Generate(20).ToArray());
             context.SaveChanges();

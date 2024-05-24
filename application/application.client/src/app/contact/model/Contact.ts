@@ -1,3 +1,5 @@
+import { Data } from "@angular/router"
+
 export interface Contact {
   id: number
   name: string
@@ -7,4 +9,5 @@ export interface Contact {
   category: string
   subcategory: string
   phone: string | null | undefined
+  dateOfBirth: Data
 }
