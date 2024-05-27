@@ -10,13 +10,17 @@ import { RouterOutlet } from '@angular/router';
 import { ContactDetailsComponent } from './contact/view/contact-details/contact-details.component';
 import { ContactFormComponent } from './contact/view/contact-form/contact-form.component';
 import { FormsModule } from '@angular/forms';
+import { UserLoginComponent } from './user/view/user-login/user-login.component';
+import { UserRegisterComponent } from './user/view/user-register/user-register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactListComponent,
     ContactDetailsComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    UserLoginComponent,
+    UserRegisterComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,

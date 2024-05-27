@@ -1,12 +1,11 @@
-﻿using backend.Controllers;
-using backend.Data.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.Numerics;
 using System.Xml.Linq;
 using System.Data.Entity;
-using backend.Data.Database;
 using Bogus;
+using application.Server.Data.Database;
+using application.Server.Data.Model;
 
 namespace application.Server.Init
 {

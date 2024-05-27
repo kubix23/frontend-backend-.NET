@@ -1,5 +1,5 @@
 <article class="container" *ngIf="contact">
-    <header><h1>Wizard {{contact.name}}</h1></header>
+    <header><h1>Contact {{contact.name}}</h1></header>
     <form #form="ngForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
             <label for="name">Name</label>

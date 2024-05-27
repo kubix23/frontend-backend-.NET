@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using backend.Data.Database;
-using backend.Data.Models;
 using application.Server.Init;
+using application.Server.Data.Database;
+using application.Server.Data.Model;
 
-namespace backend.Controllers
+namespace application.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
