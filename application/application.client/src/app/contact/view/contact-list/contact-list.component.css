@@ -42,11 +42,11 @@
 .row span > button:last-of-type:hover::after {
   content: "";
   align-self: stretch;
-  width: 20px;
+  width: 10px;
   transition: width 100ms ease-in;
 }
 
 .row span > button:last-of-type:hover {
-  box-shadow: inset -10px 0px 19px rgba(255, 0, 0, 1);
+  box-shadow: inset -10px 0px 19px rgba(255, 0, 0, 0.5);
   transition: box-shadow 150ms linear;
 }

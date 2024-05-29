@@ -15,9 +15,9 @@ namespace application.Server.Controllers
     [ApiController]
     public class ContactsController : ControllerBase
     {
-        private readonly DBContact _context;
+        private readonly DB _context;
 
-        public ContactsController(DBContact context)
+        public ContactsController(DB context)
         {
             _context = context;
         }
@@ -77,7 +77,7 @@ namespace application.Server.Controllers
             return NoContent();
         }
 
-        // DELETE: api/Cont acts/5
+        // DELETE: api/Contacts/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteContact(int id)
         {

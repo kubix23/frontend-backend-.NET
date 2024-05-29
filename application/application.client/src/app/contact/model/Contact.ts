@@ -6,8 +6,8 @@ export interface Contact {
   surname: string
   email: string | null | undefined
   password: string
-  category: string
-  subcategory: string
+  category: number
+  subcategory: number
   phone: string | null | undefined
   dateOfBirth: Data
 }

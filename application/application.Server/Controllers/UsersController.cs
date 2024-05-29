@@ -14,9 +14,9 @@ namespace application.Server.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly DBContact _context;
+        private readonly DB _context;
 
-        public UsersController(DBContact context)
+        public UsersController(DB context)
         {
             _context = context;
         }

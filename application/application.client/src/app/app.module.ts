@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +12,9 @@ import { ContactFormComponent } from './contact/view/contact-form/contact-form.c
 import { FormsModule } from '@angular/forms';
 import { UserLoginComponent } from './user/view/user-login/user-login.component';
 import { UserRegisterComponent } from './user/view/user-register/user-register.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgbCollapseModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NavbarComponent } from './utils/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +23,18 @@ import { UserRegisterComponent } from './user/view/user-register/user-register.c
     ContactDetailsComponent,
     ContactFormComponent,
     UserLoginComponent,
-    UserRegisterComponent
+    UserRegisterComponent,
+    NavbarComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule,
-    AppRoutingModule, CommonModule, RouterOutlet, FormsModule
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    CommonModule,
+    RouterOutlet,
+    FormsModule,
+    FontAwesomeModule,
+    NgbCollapseModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

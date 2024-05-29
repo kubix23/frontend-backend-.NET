@@ -1,0 +1,7 @@
+import { Data } from "@angular/router"
+
+export interface Category {
+  id: number
+  name: string
+  parentCategoryId: number | undefined
+}

@@ -12,7 +12,7 @@ const routes: Routes = [
   { component: ContactFormComponent, path: "contact/new" },
   { component: ContactFormComponent, path: "contact/:id/edit" },
   { component: UserLoginComponent, path: "login" },
-  { component: UserRegisterComponent, path: "register" },
+  { component: UserRegisterComponent, path: "registration" },
   { path: "", redirectTo: "contact", pathMatch: 'full' },
   { path: "**", redirectTo: "contact" },
 ];

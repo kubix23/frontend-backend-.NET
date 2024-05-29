@@ -4,11 +4,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace application.Server.Data.Database
 {
-    public class DBContact: DbContext
+    public class DB: DbContext
     {
-        public DBContact(DbContextOptions<DBContact> options): base(options) {  }
+        public DB(DbContextOptions<DB> options): base(options) {  }
 
         public DbSet<Contact> contacts => Set<Contact>();
         public DbSet<User> users => Set<User>();
+        public DbSet<Category> category => Set<Category>();
     }
 }

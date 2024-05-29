@@ -26,9 +26,9 @@ namespace application.Server.Data.Model
 
         [Required]
         [AllowedValues("Służbowy", "Prywatny", "inny")]
-        public required string category { get; set; }
+        public required int category { get; set; }
 
-        public string? subcategory { get; set; }
+        public int? subcategory { get; set; }
 
         [Phone]
         public string? phone { get; set; }
